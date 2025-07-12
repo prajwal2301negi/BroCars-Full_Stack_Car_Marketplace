@@ -32,7 +32,7 @@ export function CarList({ filters, sortBy, searchQuery }: CarListProps) {
       try {
         setLoading(true);
         setError(null);
-        const response = await axios.get("http://localhost:4000/api/v1/car/getCars");
+        const response = await axios.get("https://brocarsserver.onrender.com/api/v1/car/getCars");
         const apiCars: Car[] = response.data.cars || [];
         const verifiedCars = apiCars.filter((car) => car.verified === true);
 
