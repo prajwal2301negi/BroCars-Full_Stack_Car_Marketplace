@@ -70,7 +70,7 @@ export default function ContactPage() {
      e.preventDefault();
     try {
       const res = await axios.post(
-        'http://localhost:4000/api/v1/contact/sendMessage',
+        'https://brocarsserver.onrender.com/api/v1/contact/sendMessage',
         { name, email, phone, subject, message, inquiryType },
         {
           withCredentials: true,
