@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -10,23 +10,23 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from '@/components/ui/navigation-menu';
-import { Input } from '@/components/ui/input';
-import { Search, User, Menu, X } from 'lucide-react';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+} from "@/components/ui/navigation-menu";
+import { Input } from "@/components/ui/input";
+import { Search, User, Menu, X } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { filterOptions } from '@/lib/car-data';
-import Cookies from "js-cookie";
+} from "@/components/ui/dropdown-menu";
+import { filterOptions } from "@/lib/car-data";
+// import Cookies from "js-cookie";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  //const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const createFilterUrl = (filterType: string, value?: string) => {
     const params = new URLSearchParams();
@@ -49,7 +49,9 @@ export function Navbar() {
             {/* <span className="text-white font-bold text-sm">BC</span> */}
             <span></span>
           </div>
-          <span className="font-bold text-xl bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">BroCars</span>
+          <span className="font-bold text-xl bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+            BroCars
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -74,15 +76,17 @@ export function Navbar() {
                       </Link>
                     </NavigationMenuLink>
                   </div>
-                  
+
                   <div className="grid grid-cols-3 gap-4">
                     <div>
-                      <h4 className="mb-2 text-sm font-medium text-gray-900">By Make</h4>
+                      <h4 className="mb-2 text-sm font-medium text-gray-900">
+                        By Make
+                      </h4>
                       <div className="space-y-1">
                         {filterOptions.makes.slice(0, 4).map((make) => (
                           <NavigationMenuLink key={make} asChild>
                             <Link
-                              href={createFilterUrl('make', make)}
+                              href={createFilterUrl("make", make)}
                               className="block select-none rounded-md p-2 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                             >
                               {make}
@@ -91,14 +95,16 @@ export function Navbar() {
                         ))}
                       </div>
                     </div>
-                    
+
                     <div>
-                      <h4 className="mb-2 text-sm font-medium text-gray-900">By Body Type</h4>
+                      <h4 className="mb-2 text-sm font-medium text-gray-900">
+                        By Body Type
+                      </h4>
                       <div className="space-y-1">
                         {filterOptions.bodyTypes.slice(0, 4).map((bodyType) => (
                           <NavigationMenuLink key={bodyType} asChild>
                             <Link
-                              href={createFilterUrl('bodyType', bodyType)}
+                              href={createFilterUrl("bodyType", bodyType)}
                               className="block select-none rounded-md p-2 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                             >
                               {bodyType}
@@ -107,14 +113,19 @@ export function Navbar() {
                         ))}
                       </div>
                     </div>
-                    
+
                     <div>
-                      <h4 className="mb-2 text-sm font-medium text-gray-900">By Price</h4>
+                      <h4 className="mb-2 text-sm font-medium text-gray-900">
+                        By Price
+                      </h4>
                       <div className="space-y-1">
                         {filterOptions.priceRanges.slice(0, 4).map((range) => (
                           <NavigationMenuLink key={range.label} asChild>
                             <Link
-                              href={createFilterUrl('priceRange', `${range.min}-${range.max}`)}
+                              href={createFilterUrl(
+                                "priceRange",
+                                `${range.min}-${range.max}`
+                              )}
                               className="block select-none rounded-md p-2 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                             >
                               {range.label}
@@ -148,7 +159,9 @@ export function Navbar() {
                       href="/finance"
                       className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                     >
-                      <div className="text-sm font-medium leading-none">Overview</div>
+                      <div className="text-sm font-medium leading-none">
+                        Overview
+                      </div>
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                         Car finance options and benefits
                       </p>
@@ -159,7 +172,9 @@ export function Navbar() {
                       href="/finance/emi-calculator"
                       className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                     >
-                      <div className="text-sm font-medium leading-none">EMI Calculator</div>
+                      <div className="text-sm font-medium leading-none">
+                        EMI Calculator
+                      </div>
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                         Calculate your monthly EMI
                       </p>
@@ -180,8 +195,7 @@ export function Navbar() {
               </NavigationMenuLink>
             </NavigationMenuItem>
 
-
-            <NavigationMenuItem>
+            {/* <NavigationMenuItem>
               <NavigationMenuLink asChild>
                 <Link
                   href="/compare"
@@ -190,9 +204,7 @@ export function Navbar() {
                   Compare Cars
                 </Link>
               </NavigationMenuLink>
-            </NavigationMenuItem>
-
-
+            </NavigationMenuItem> */}
           </NavigationMenuList>
         </NavigationMenu>
 
@@ -206,13 +218,16 @@ export function Navbar() {
 
         {/* User Actions */}
         <div className="flex items-center space-x-4">
-          {isLoggedIn ? (
+          {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="relative h-8 w-8 rounded-full">
+                <Button
+                  variant="ghost"
+                  className="relative h-8 w-8 rounded-full"
+                >
                   <Avatar className="h-8 w-8">
                     <AvatarImage src="/placeholder-avatar.jpg" alt="@user" />
-                    <AvatarFallback>JD</AvatarFallback>
+                    <AvatarFallback>MP</AvatarFallback>
                   </Avatar>
                 </Button>
               </DropdownMenuTrigger>
@@ -220,27 +235,18 @@ export function Navbar() {
                 <DropdownMenuItem asChild>
                   <Link href="/profile">Profile</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild>
+                {/* <DropdownMenuItem asChild>
                   <Link href="/my-cars">My Cars</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
+                </DropdownMenuItem> */}
+                {/* <DropdownMenuItem asChild>
                   <Link href="/bookings">My Bookings</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setIsLoggedIn(false)}>
+                </DropdownMenuItem> */}
+                {/* <DropdownMenuItem onClick={() => setIsLoggedIn(false)}>
                   Logout
-                </DropdownMenuItem>
+                </DropdownMenuItem> */}
               </DropdownMenuContent>
             </DropdownMenu>
-          ) : (
-            <>
-              <Button variant="ghost" asChild className="hidden md:inline-flex">
-                <Link href="/login">Login</Link>
-              </Button>
-              <Button asChild className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700">
-                <Link href="/signup">Sign Up</Link>
-              </Button>
-            </>
-          )}
+          }
 
           {/* Mobile Menu */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -251,19 +257,42 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <nav className="flex flex-col space-y-4">
-                <Link href="/buy-car" className="text-lg font-medium" onClick={() => setIsOpen(false)}>
+                <Link
+                  href="/buy-car"
+                  className="text-lg font-medium"
+                  onClick={() => setIsOpen(false)}
+                >
                   Buy Used Cars
                 </Link>
-                <Link href="/sell-car1" className="text-lg font-medium" onClick={() => setIsOpen(false)}>
+                <Link
+                  href="/sell-car1"
+                  className="text-lg font-medium"
+                  onClick={() => setIsOpen(false)}
+                >
                   Sell Car
                 </Link>
-                <Link href="/finance" className="text-lg font-medium" onClick={() => setIsOpen(false)}>
+                <Link
+                  href="/finance"
+                  className="text-lg font-medium"
+                  onClick={() => setIsOpen(false)}
+                >
                   Car Finance
                 </Link>
-                <Link href="/blog" className="text-lg font-medium" onClick={() => setIsOpen(false)}>
+                <Link
+                  href="/blog"
+                  className="text-lg font-medium"
+                  onClick={() => setIsOpen(false)}
+                >
                   Blog
                 </Link>
-                {!isLoggedIn && (
+                  <Link
+                  href="/profile"
+                  className="text-lg font-medium"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Profile
+                </Link>
+                {/* {!isLoggedIn && (
                   <>
                     <Link href="/login" className="text-lg font-medium" onClick={() => setIsOpen(false)}>
                       Login
@@ -272,7 +301,7 @@ export function Navbar() {
                       Sign Up
                     </Link>
                   </>
-                )}
+                )} */}
               </nav>
             </SheetContent>
           </Sheet>
