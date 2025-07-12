@@ -74,7 +74,7 @@ const ForgotPassword = () => {
 
     try {
       const res = await axios.post(
-        'http://localhost:4000/api/v1/user/password/forgot',
+        'https://brocarsserver.onrender.com/api/v1/user/password/forgot',
         { email },
         {
           withCredentials: true,
