@@ -131,7 +131,7 @@ export default function ListCar2Page() {
 
     try {
       await axios.put(
-        `http://localhost:4000/api/v1/car/listCar2?make=${make}&model=${model}`,
+        `https://brocarsserver.onrender.com/api/v1/car/listCar2?make=${make}&model=${model}`,
         { price, fuel, transmission, kms, location, owner, color, bodyType },
         {
           withCredentials: true,
