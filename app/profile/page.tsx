@@ -280,7 +280,7 @@ export default function Profile() {
     const fetchUser = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:4000/api/v1/user/userProfile",
+          "https://brocarsserver.onrender.com/api/v1/user/userProfile",
           {
             withCredentials: true,
           }
