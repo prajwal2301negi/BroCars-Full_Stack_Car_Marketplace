@@ -135,7 +135,7 @@ const OtpVerification = () => {
 
     try {
       const res = await axios.post(
-        'http://localhost:4000/api/v1/user/otp',
+        'https://brocarsserver.onrender.com/api/v1/user/otp',
         payload,
         {
           withCredentials: true,
