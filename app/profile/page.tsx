@@ -58,7 +58,7 @@ export default function Profile() {
   // }, []);
 
 
-            useEffect(() => {
+  useEffect(() => {
   const fetchUser = async () => {
     try {
       const token = localStorage.getItem("token");
