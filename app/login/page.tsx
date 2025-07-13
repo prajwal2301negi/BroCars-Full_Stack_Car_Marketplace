@@ -49,6 +49,7 @@ export default function LoginPage() {
         setEmail("");
         setPassword("");
         setRole("");
+        localStorage.setItem("token", response.data.token);
         toast.success("Logged in successfully");
         router.push('/profile')
         
