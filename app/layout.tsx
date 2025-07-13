@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'BroCars - Buy & Sell Used Cars',
-  description: 'India\'s most trusted platform to buy and sell used cars. Get best deals on pre-owned cars with warranty and easy EMI options.',
+  description: '  Dwraka\'s most trusted platform to buy and sell used cars. Get best deals on pre-owned cars with warranty and easy EMI options.',
   keywords: 'used cars, buy cars, sell cars, car finance, car loan, EMI calculator, BroCars',
 };
 
