@@ -5,7 +5,7 @@ import { Users, Award, Shield, Globe, Target, Heart } from 'lucide-react';
 const stats = [
   { number: '10L+', label: 'Cars Sold', icon: Award },
   { number: '25L+', label: 'Happy Customers', icon: Users },
-  { number: '150+', label: 'Cities', icon: Globe },
+  { number: '10+', label: 'Cities', icon: Globe },
   { number: '99.2%', label: 'Customer Satisfaction', icon: Heart },
 ];
 
@@ -34,22 +34,22 @@ const values = [
 
 const team = [
   {
-    name: 'Vikram Chopra',
+    name: 'Sachin Singh',
     role: 'Co-Founder & CEO',
     image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300',
-    description: 'Visionary leader with 15+ years in automotive and technology sectors.',
+    description: 'Visionary leader with 10+ years in real estate sectors.',
   },
   {
-    name: 'Mehul Agrawal',
+    name: 'Sandeep Gulia',
     role: 'Co-Founder & CTO',
     image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=300',
-    description: 'Technology expert focused on building scalable platforms for the automotive industry.',
+    description: 'Financial strategist with expertise in scaling businesses and managing operations.',
   },
   {
-    name: 'Ruchit Agarwal',
+    name: 'Nitin',
     role: 'Co-Founder & CFO',
     image: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=300',
-    description: 'Financial strategist with expertise in scaling businesses and managing operations.',
+    description: 'Expertise of 8+years in car sale/purchase.',
   },
 ];
 
@@ -61,7 +61,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-              About Cars24
+              About BroCars
             </h1>
             <p className="text-xl mb-8 text-blue-100">
               India's most trusted platform for buying and selling used cars, revolutionizing the automotive industry with technology and transparency.
@@ -101,7 +101,7 @@ export default function AboutPage() {
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Story</h2>
               <p className="text-xl text-gray-600">
-                From a simple idea to India's largest used car platform
+                From a simple idea to Dwarka's largest used car platform
               </p>
             </div>
             
@@ -109,7 +109,7 @@ export default function AboutPage() {
               <div>
                 <img
                   src="https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&cs=tinysrgb&w=600"
-                  alt="Cars24 Story"
+                  alt="BroCar Story"
                   className="rounded-lg shadow-lg"
                 />
               </div>
@@ -117,9 +117,9 @@ export default function AboutPage() {
                 <div>
                   <h3 className="text-2xl font-semibold text-gray-900 mb-3">Founded in 2015</h3>
                   <p className="text-gray-600">
-                    Cars24 was founded with a simple mission: to make car buying and selling transparent, 
+                    BroCar was founded with a simple mission: to make car buying and selling transparent, 
                     convenient, and trustworthy. What started as a small team with a big vision has now 
-                    become India's most trusted automotive platform.
+                    become Dwarka's most trusted automotive platform.
                   </p>
                 </div>
                 <div>
@@ -177,7 +177,7 @@ export default function AboutPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Leadership Team</h2>
             <p className="text-xl text-gray-600">
-              Meet the visionaries behind Cars24
+              Meet the visionaries behind BroCars
             </p>
           </div>
           
