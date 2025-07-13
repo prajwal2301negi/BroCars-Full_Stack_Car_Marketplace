@@ -16,7 +16,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: 'Phone',
-    details: ['+91 9711220289', '+91 9711220289'],
+    details: ['+91 9711220289', '+91 9091920006'],
     description: 'Mon-Sun 9AM-9PM',
   },
   {
@@ -285,8 +285,8 @@ export default function ContactPage() {
         {/* Office Locations */}
         <div className="mt-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Offices</h2>
-            <p className="text-xl text-gray-600">Visit us at any of our locations across India</p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Office</h2>
+            <p className="text-xl text-gray-600">Visit us at our office in Dwarka.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -331,7 +331,7 @@ export default function ContactPage() {
               <CardContent className="p-6">
                 <h3 className="font-semibold text-gray-900 mb-2">Are all cars verified?</h3>
                 <p className="text-gray-600 text-sm">
-                  Yes, every car goes through 200+ quality checks by our certified technicians before being listed.
+                  Yes, every car goes through 20+ quality checks by our certified technicians before being listed.
                 </p>
               </CardContent>
             </Card>
