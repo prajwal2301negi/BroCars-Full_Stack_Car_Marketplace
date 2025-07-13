@@ -68,62 +68,62 @@
 
 // main();
 
-import { NextResponse } from "next/server";
-import { GoogleGenAI } from "@google/genai";
+// import { NextResponse } from "next/server";
+// import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({
-  apiKey: process.env.GEMINI_API_KEY!, // Use env variable for safety
-});
+// const ai = new GoogleGenAI({
+//   apiKey: process.env.GEMINI_API_KEY!, // Use env variable for safety
+// });
 
-export async function POST(req: Request) {
-  try {
-    const { car1, car2 } = await req.json();
+// export async function POST(req: Request) {
+//   try {
+//     const { car1, car2 } = await req.json();
 
-    const prompt = `
-You are an automotive expert. Compare these two cars in detail:
-Car 1: ${car1}
-Car 2: ${car2}
+//     const prompt = `
+// You are an automotive expert. Compare these two cars in detail:
+// Car 1: ${car1}
+// Car 2: ${car2}
 
-Compare them under the following sections:
-1. Overview
-2. Engine & Performance
-3. Features & Comfort
-4. Fuel Efficiency
-5. Model Available with Sunroof
-6. Price On Road Delhi and off Road
-7. Model
-8. BodyType
-9. Variants Available
-10. Minimum DownPayment Must Have
-11. Fuel Available
-12. Transmission Available
-13. "Color Available
-14. "Mileage
-15. "Engine
-16. "Seating Capacity
-17. "MaxPower and MaxTorque
-18. "Specifications
-19. "Ground Clearance, BootSpace, SeatCapacity
-20. Value for Money
-21. Final Recommendation
+// Compare them under the following sections:
+// 1. Overview
+// 2. Engine & Performance
+// 3. Features & Comfort
+// 4. Fuel Efficiency
+// 5. Model Available with Sunroof
+// 6. Price On Road Delhi and off Road
+// 7. Model
+// 8. BodyType
+// 9. Variants Available
+// 10. Minimum DownPayment Must Have
+// 11. Fuel Available
+// 12. Transmission Available
+// 13. "Color Available
+// 14. "Mileage
+// 15. "Engine
+// 16. "Seating Capacity
+// 17. "MaxPower and MaxTorque
+// 18. "Specifications
+// 19. "Ground Clearance, BootSpace, SeatCapacity
+// 20. Value for Money
+// 21. Final Recommendation
 
-Use a friendly yet informative tone. Use bullet points where needed.
-`;
+// Use a friendly yet informative tone. Use bullet points where needed.
+// `;
 
-    const response = await ai.models.generateContent({
-      model: "gemini-2.0-flash",
-      contents: prompt,
-      config: {
-        systemInstruction: "You are an expert car reviewer named AutoBot.",
-      },
-    });
+//     const response = await ai.models.generateContent({
+//       model: "gemini-2.5-pro",
+//       contents: prompt,
+//       config: {
+//         systemInstruction: "You are an expert car reviewer named AutoBot.",
+//       },
+//     });
 
-    return NextResponse.json({ result: response.text });
-  } catch (error) {
-    console.error("Gemini comparison error:", error);
-    return NextResponse.json(
-      { result: "An error occurred while generating the comparison." },
-      { status: 500 }
-    );
-  }
-}
+//     return NextResponse.json({ result: response.text });
+//   } catch (error) {
+//     console.error("Gemini comparison error:", error);
+//     return NextResponse.json(
+//       { result: "An error occurred while generating the comparison." },
+//       { status: 500 }
+//     );
+//   }
+// }
