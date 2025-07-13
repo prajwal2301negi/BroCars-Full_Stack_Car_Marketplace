@@ -1,22 +1,24 @@
+
+
 // import { NextResponse } from "next/server";
 // import type { NextRequest } from "next/server";
 
 // export function middleware(req: NextRequest) {
-//   const token = req.cookies.get("tokenu")?.value; // Replace with your actual cookie name
+//   const token = req.cookies.get("tokenu")?.value; // Make sure "tokenu" matches your backend cookie name
 //   const { pathname } = req.nextUrl;
 //   const isLoggedIn = Boolean(token);
 
 //   const publicPathsForUnauth = ["/login", "/signup"];
-//   const protectedPaths = ["/sell-car2","/sell-car3","/sell-car4", "/car", "/sell-car1", "/profile"];
+//   const protectedPaths = ["/sell-car1", "/sell-car2", "/sell-car3", "/sell-car4", "/car", "/profile"];
 
-//   //Redirect logged-in users away from auth pages
+//   // 🔐 Redirect authenticated users away from login/signup
 //   if (isLoggedIn && publicPathsForUnauth.includes(pathname)) {
 //     const url = req.nextUrl.clone();
-//     url.pathname = "/profile"; // or "/"
+//     url.pathname = "/profile";
 //     return NextResponse.redirect(url);
 //   }
 
-//   // Block non-authenticated users from protected routes
+//   // 🔒 Block non-authenticated users from protected routes
 //   const isProtected = protectedPaths.some((path) =>
 //     pathname.startsWith(path)
 //   );
@@ -44,29 +46,36 @@
 // };
 
 
+
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export function middleware(req: NextRequest) {
-  const token = req.cookies.get("tokenu")?.value; // Make sure "tokenu" matches your backend cookie name
-  const { pathname } = req.nextUrl;
+  const authHeader = req.headers.get("authorization");
+  const token = authHeader?.startsWith("Bearer ") ? authHeader.split(" ")[1] : null;
   const isLoggedIn = Boolean(token);
 
-  const publicPathsForUnauth = ["/login", "/signup"];
-  const protectedPaths = ["/sell-car1", "/sell-car2", "/sell-car3", "/sell-car4", "/car", "/profile"];
+  const { pathname } = req.nextUrl;
 
-  // 🔐 Redirect authenticated users away from login/signup
+  const publicPathsForUnauth = ["/login", "/signup"];
+  const protectedPaths = [
+    "/sell-car1",
+    "/sell-car2",
+    "/sell-car3",
+    "/sell-car4",
+    "/car",
+    "/profile"
+  ];
+
+  // 🔐 Redirect authenticated users away from public pages
   if (isLoggedIn && publicPathsForUnauth.includes(pathname)) {
     const url = req.nextUrl.clone();
     url.pathname = "/profile";
     return NextResponse.redirect(url);
   }
 
-  // 🔒 Block non-authenticated users from protected routes
-  const isProtected = protectedPaths.some((path) =>
-    pathname.startsWith(path)
-  );
-
+  // 🔒 Redirect unauthenticated users from protected routes
+  const isProtected = protectedPaths.some((path) => pathname.startsWith(path));
   if (!isLoggedIn && isProtected) {
     const url = req.nextUrl.clone();
     url.pathname = "/login";
@@ -88,3 +97,4 @@ export const config = {
     "/profile",
   ],
 };
+
