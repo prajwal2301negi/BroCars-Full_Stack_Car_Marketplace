@@ -1,72 +1,72 @@
 // File: app/api/compare-cars/route.ts
-import { NextResponse } from "next/server";
-import { GoogleGenerativeAI } from "@google/generative-ai";
+// import { NextResponse } from "next/server";
+// import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "");
-
-
-import { GoogleGenAI } from "@google/genai";
-
-const ai = new GoogleGenAI({ apiKey: "YOUR_API_KEY" });
-
-async function main() {
-  const response = await ai.models.generateContent({
-    model: "gemini-2.5-pro",
-    contents: "Explain how AI works in a few words",
-  });
-  console.log(response.text);
-}
-
-await main();
+// const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "");
 
 
-export async function POST(req: Request) {
-  try {
-    const { car1, car2 } = await req.json();
+// import { GoogleGenAI } from "@google/genai";
 
-    const prompt = `
-You are an automotive expert. Compare the following two cars based on their brand, model, variant, fuel type, transmission, engine, mileage, body type, price, seating, and features.
+// const ai = new GoogleGenAI({ apiKey: "YOUR_API_KEY" });
 
-Car 1:
-${car1}
+// async function main() {
+//   const response = await ai.models.generateContent({
+//     model: "gemini-2.5-pro",
+//     contents: "Explain how AI works in a few words",
+//   });
+//   console.log(response.text);
+// }
 
-Car 2:
-${car2}
-
-Give the comparison in a clear bullet-point format under the following headers:
-1. Overview
-2. Performance
-3. Comfort & Features
-4. Value for Money
-5. Final Recommendation (optional)
-`;
-
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-    const text = response.text();
-
-    return NextResponse.json({ result: text });
-  } catch (err) {
-    console.error("Gemini API error:", err);
-    return NextResponse.json({ result: "Comparison failed. Please try again." }, { status: 500 });
-  }
-}
+// await main();
 
 
-import { GoogleGenAI } from "@google/genai";
+// export async function POST(req: Request) {
+//   try {
+//     const { car1, car2 } = await req.json();
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+//     const prompt = `
+// You are an automotive expert. Compare the following two cars based on their brand, model, variant, fuel type, transmission, engine, mileage, body type, price, seating, and features.
 
-async function main() {
-  const response = await ai.models.generateContent({
-    model: "gemini-2.5-pro",
-    contents: "Explain how AI works in a few words",
-  });
-  console.log(response.text);
-}
+// Car 1:
+// ${car1}
 
-main();
+// Car 2:
+// ${car2}
+
+// Give the comparison in a clear bullet-point format under the following headers:
+// 1. Overview
+// 2. Performance
+// 3. Comfort & Features
+// 4. Value for Money
+// 5. Final Recommendation (optional)
+// `;
+
+//     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+//     const result = await model.generateContent(prompt);
+//     const response = await result.response;
+//     const text = response.text();
+
+//     return NextResponse.json({ result: text });
+//   } catch (err) {
+//     console.error("Gemini API error:", err);
+//     return NextResponse.json({ result: "Comparison failed. Please try again." }, { status: 500 });
+//   }
+// }
+
+
+// import { GoogleGenAI } from "@google/genai";
+
+// const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+
+// async function main() {
+//   const response = await ai.models.generateContent({
+//     model: "gemini-2.5-pro",
+//     contents: "Explain how AI works in a few words",
+//   });
+//   console.log(response.text);
+// }
+
+// main();
 
 import { NextResponse } from "next/server";
 import { GoogleGenAI } from "@google/genai";
