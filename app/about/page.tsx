@@ -109,7 +109,7 @@ export default function AboutPage() {
               <div>
                 <img
                   src="https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&cs=tinysrgb&w=600"
-                  alt="BroCar Story"
+                  alt="BroCars Story"
                   className="rounded-lg shadow-lg"
                 />
               </div>
@@ -117,7 +117,7 @@ export default function AboutPage() {
                 <div>
                   <h3 className="text-2xl font-semibold text-gray-900 mb-3">Founded in 2015</h3>
                   <p className="text-gray-600">
-                    BroCar was founded with a simple mission: to make car buying and selling transparent, 
+                    BroCars was founded with a simple mission: to make car buying and selling transparent, 
                     convenient, and trustworthy. What started as a small team with a big vision has now 
                     become Dwarka's most trusted automotive platform.
                   </p>
