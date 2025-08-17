@@ -18,7 +18,7 @@ const testimonials = [
     location: 'Mumbai',
     avatar: '/placeholder-avatar-2.jpg',
     rating: 5,
-    text: 'Sold my car in just 2 days! Cars24 offered the best price and handled all the paperwork.',
+    text: 'Sold my car in just 2 days! BroCars offered the best price and handled all the paperwork.',
     car: 'Maruti Swift',
   },
   {
