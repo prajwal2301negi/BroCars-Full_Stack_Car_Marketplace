@@ -329,7 +329,7 @@ export default function ListCar3Page() {
 
     try {
       await axios.put(
-        `http://localhost:4000/api/v1/car/listCar3?make=${make}&model=${model}&location=${location}&sellerDetail=${sellerDetail}`,
+        `https://brocarsserver.onrender.com/api/v1/car/listCar3?make=${make}&model=${model}&location=${location}&sellerDetail=${sellerDetail}`,
         {
           engine,
           mileage,
