@@ -1054,7 +1054,7 @@ export default function CarDetailsPage({ params }: { params: { id: string } }) {
   // Fetch car data
   const fetchCars = async () => {
     try {
-      const res = await axios.get(`http://localhost:4000/api/v1/car/getACar/${carId}`, {
+      const res = await axios.get(`https://brocarsserver.onrender.com/api/v1/car/getACar/${carId}`, {
         withCredentials: true,
       });
       setCar(res.data.car);
