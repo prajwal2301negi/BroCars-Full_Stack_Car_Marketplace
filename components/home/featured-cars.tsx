@@ -105,9 +105,9 @@ export function FeaturedCars() {
                     ))}
                   </div>
 
-                  <Button asChild className="w-full bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700">
+{/*                   <Button asChild className="w-full bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700">
                     <Link href={`/car/${car.id}`}>View Details</Link>
-                  </Button>
+                  </Button> */}
                 </div>
               </CardContent>
             </Card>
