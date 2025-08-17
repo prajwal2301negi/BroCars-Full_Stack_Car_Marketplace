@@ -66,7 +66,7 @@ export function Footer() {
             <div className="space-y-2 text-sm">
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
-                <span>+91 98765 43210</span>
+                <span>+91 9711220289</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4" />
@@ -82,7 +82,7 @@ export function Footer() {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            © 2024 BroCars. All rights reserved. Built with Next.js and shadcn/ui.
+            © 2025 BroCars. All rights reserved.
           </p>
         </div>
       </div>
