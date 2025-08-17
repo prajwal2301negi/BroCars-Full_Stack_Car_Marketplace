@@ -72,7 +72,7 @@ import { NextResponse } from "next/server";
 import { GoogleGenAI } from "@google/genai";
 
 const ai = new GoogleGenAI({
-  apiKey: 'AIzaSyDSP9UwYfIKmHomzerlIFUeB8I8cdn63fI'
+  apiKey: 'NEXT_PUBLIC_API_KEY'
 });
 
 export async function POST(req: Request) {
@@ -120,10 +120,11 @@ Use a friendly yet informative tone. Use bullet points where needed.
 
     return NextResponse.json({ result: response.text });
   } catch (error) {
-    console.error("Gemini comparison error:", error);
+    console.error("Comparison error:", error);
     return NextResponse.json(
       { result: "An error occurred while generating the comparison." },
       { status: 500 }
     );
   }
 }
+
