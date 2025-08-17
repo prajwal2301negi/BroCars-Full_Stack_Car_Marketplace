@@ -1,4 +1,4 @@
-// File: app/api/compare-cars/route.ts
+// // File: app/api/compare-cars/route.ts
 // import { NextResponse } from "next/server";
 // import { GoogleGenerativeAI } from "@google/generative-ai";
 
@@ -11,7 +11,7 @@
 
 // async function main() {
 //   const response = await ai.models.generateContent({
-//     model: "gemini-2.5-pro",
+//     model: "gemini-2.0-flash",
 //     contents: "Explain how AI works in a few words",
 //   });
 //   console.log(response.text);
@@ -60,7 +60,7 @@
 
 // async function main() {
 //   const response = await ai.models.generateContent({
-//     model: "gemini-2.5-pro",
+//     model: "gemini-2.0-flash",
 //     contents: "Explain how AI works in a few words",
 //   });
 //   console.log(response.text);
@@ -72,7 +72,7 @@ import { NextResponse } from "next/server";
 import { GoogleGenAI } from "@google/genai";
 
 const ai = new GoogleGenAI({
-  apiKey: process.env.GEMINI_API_KEY!, // Use env variable for safety
+  apiKey: 'AIzaSyDSP9UwYfIKmHomzerlIFUeB8I8cdn63fI'
 });
 
 export async function POST(req: Request) {
@@ -111,7 +111,7 @@ Use a friendly yet informative tone. Use bullet points where needed.
 `;
 
     const response = await ai.models.generateContent({
-      model: "gemini-2.5-pro",
+      model: "gemini-2.0-flash",
       contents: prompt,
       config: {
         systemInstruction: "You are an expert car reviewer named AutoBot.",
