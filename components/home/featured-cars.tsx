@@ -21,7 +21,7 @@ export function FeaturedCars() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            Featured Used Cars
+            Sold Cars
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Handpicked cars that offer the best value for money with verified quality checks
@@ -116,7 +116,7 @@ export function FeaturedCars() {
 
         <div className="text-center">
           <Button asChild size="lg" variant="outline" className="px-8 border-orange-500 text-orange-600 hover:bg-orange-50">
-            <Link href="/buy-car">View All Cars</Link>
+            <Link href="/buy-car">View Available Cars</Link>
           </Button>
         </div>
       </div>
